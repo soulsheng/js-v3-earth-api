@@ -54,10 +54,10 @@
         // Add some markers
         for (var i = 0; i < 5; i++) {
           var marker = new google.maps.Marker({
-            position: getRandomLatLng(),
+            position: new google.maps.LatLng(36.1, 120.456+15*i),
             draggable: true,
             title: 'this is a marker',
-            icon: 'https://google-developers.appspot.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+            icon: '../docs/logo-ioi-s.png'
           });
 
           var infowindow = new google.maps.InfoWindow({
