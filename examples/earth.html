@@ -19,7 +19,7 @@
     <script>
       google.load('earth', '1');
       var map;
-      var googleEarth;
+      //var googleEarth;
       function init() {
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: 10,
@@ -27,7 +27,7 @@
           mapTypeId: google.maps.MapTypeId.ROADMAP
         });
 
-        googleEarth = new GoogleEarth(map);
+        //googleEarth = new GoogleEarth(map);
 
         google.maps.event.addListenerOnce(map, 'tilesloaded', addOverlays);
       }
