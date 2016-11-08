@@ -20,10 +20,11 @@
       google.load('earth', '1');
       var map;
       //var googleEarth;
+	  var posDefault = new google.maps.LatLng(36, 120);
       function init() {
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: 3,
-          center: new google.maps.LatLng(36.1, 120.456),
+          center: posDefault,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         });
 
@@ -54,7 +55,7 @@
         // Add some markers
         for (var i = 0; i < 5; i++) {
           var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(36.1, 120.456+15*i),
+            position: new google.maps.LatLng( posDefault.lat(), posDefault.lng()+15*i ),
             draggable: true,
             title: 'this is a marker',
             icon: '../docs/logo-ioi-s.png'
@@ -75,7 +76,7 @@
         var polyline = new google.maps.Polyline(polyOptions);
         polyline.setMap(map);
         for (i = 0; i < 5; i++) {
-          polyline.getPath().push( new google.maps.LatLng(36.1, 120.456+15*i) );
+          polyline.getPath().push( new google.maps.LatLng( posDefault.lat(), posDefault.lng()+15*i ) );
         }
 /*
         // Add a polygon
